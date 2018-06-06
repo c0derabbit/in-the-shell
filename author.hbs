@@ -1,0 +1,17 @@
+{{!< default}}
+
+{{#author}}
+  <section class="author-profile">
+    {{#if profile_image}}
+      <img src="{{profile_image}}" alt="{{name}}'s picture" />
+    {{/if}}
+  	<h1 class="author-title">{{name}}</h1>
+    {{#if bio}}<h2 class="author-bio">{{bio}}</h2>{{/if}}
+
+    <div class="author-meta">
+      {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+     </div>
+  </section>
+{{/author}}
+
+{{> "loop_compact"}}
