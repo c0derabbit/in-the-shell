@@ -7,11 +7,19 @@ $base-padding: 20px;
 /* breakpoints */
 $tablet: 700px;
 
-%content-width {
-  width: 99%;
-  max-width: 800px;
+/* colours */
+$light-gray: #ddd;
+$black: #222;
+
+%full-width {
+  width: 100%;
   margin: 0 auto;
   padding: $base-padding;
+}
+
+%content-width {
+  @extend %full-width;
+  max-width: 800px;
 }
 
 html, body {
@@ -20,7 +28,7 @@ html, body {
 
 body {
   font: 16px 'Helvetica Neue', sans-serif;
-  color: #222;
+  color: $black;
   margin: 0;
   min-height: inherit;
   display: flex;
@@ -29,11 +37,25 @@ body {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 header {
-  @extend %content-width;
+  @extend %full-width;
   padding: $base-padding;
+
+  h1 {
+    font-size: 2rem;
+    color: $light-gray;
+
+    @media (min-width: $tablet) {
+      font-size: 4rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
 main {
@@ -41,10 +63,39 @@ main {
 
   article {
     margin-bottom: 3em;
+
+    .post-title {
+      font-size: 2rem;
+
+      @media (min-width: $tablet) {
+        font-size: 3rem;
+      }
+    }
+
+    h2 a {
+      font-size: 1.5rem;
+
+      @media (min-width: $tablet) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      a {
+        text-decoration: underline;
+      }
+    }
   }
 
   img {
-    max-width: 100%;
+    max-width: 100vw;
+    position: relative;
+    left: -20px;
+
+    @media (min-width: 1000px) {
+      width: 140%;
+      left: -30%;
+    }
   }
 }
 
