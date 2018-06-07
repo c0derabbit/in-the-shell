@@ -8,8 +8,14 @@ $base-padding: 20px;
 $tablet: 700px;
 
 /* colours */
+$accent: orange;
+$text-accent: #888;
 $light-gray: #ddd;
+$mid-gray: #ccc;
 $black: #222;
+
+/* fonts */
+$accent-font: serif;
 
 %full-width {
   width: 100%;
@@ -58,11 +64,19 @@ header {
   }
 }
 
+.home-template article {
+  &:hover {
+    background: lighten($light-gray, 10%);
+  }
+}
+
 main {
   @extend %content-width;
 
   article {
     margin-bottom: 3em;
+    padding: 1em;
+    border-radius: 5px;
 
     .post-title {
       font-size: 2rem;
@@ -72,7 +86,7 @@ main {
       }
     }
 
-    h2 a {
+    h2 {
       font-size: 1.5rem;
 
       @media (min-width: $tablet) {
@@ -80,10 +94,34 @@ main {
       }
     }
 
+    .post-meta {
+      font-size: .85rem;
+
+      img {
+        width: 40px;
+        border-radius: 50%;
+        position: initial;
+      }
+    }
+
     p {
       a {
         text-decoration: underline;
+        -webkit-text-decoration-color: $mid-gray;
+                text-decoration-color: $mid-gray;
+
+        &:hover {
+        -webkit-text-decoration-color: $black;
+                text-decoration-color: $black;
+        }
       }
+    }
+
+    blockquote {
+      color: $text-accent;
+      font-size: 1.2rem;
+      font-style: italic;
+      font-family: $accent-font;
     }
   }
 
