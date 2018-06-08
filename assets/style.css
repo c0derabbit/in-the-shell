@@ -74,13 +74,12 @@ main article {
     font-style: italic;
     font-family: serif; }
 main img {
-  max-width: 100vw;
-  position: relative;
-  left: -20px; }
-  @media (min-width: 1000px) {
-    main img {
-      width: 140%;
-      left: -30%; } }
+  max-width: 100%; }
+  @media (min-width: 1024px) {
+    main img[src$="#full"] {
+      max-width: 100vw;
+      width: 100vw;
+      margin-left: calc(-50vw + 364px); } }
 
 .footer-wrapper {
   background: #f0f0f0;

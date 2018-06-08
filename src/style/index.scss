@@ -6,6 +6,7 @@ $base-padding: 20px;
 
 /* breakpoints */
 $tablet: 700px;
+$desktop: 1024px;
 
 /* colours */
 $accent: orange;
@@ -126,13 +127,18 @@ main {
   }
 
   img {
-    max-width: 100vw;
-    position: relative;
-    left: -20px;
+    max-width: 100%;
 
-    @media (min-width: 1000px) {
-      width: 140%;
-      left: -30%;
+    &[src$="#full"] {
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: -36px;
+
+      @media (min-width: $desktop) {
+        max-width: 100vw;
+        width: 100vw;
+        margin-left: calc(-50vw + 364px);
+      }
     }
   }
 }
