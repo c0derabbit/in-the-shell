@@ -105,7 +105,8 @@ main {
       }
     }
 
-    p {
+    p,
+    .post-meta {
       a {
         text-decoration: underline;
         -webkit-text-decoration-color: $mid-gray;
@@ -153,6 +154,7 @@ main {
     .footer-logo {
       opacity: .4;
       margin-bottom: 1em;
+      margin-right: 12px;
       max-width: 80px;
     }
 
@@ -189,7 +191,6 @@ main {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      border-top: 2px solid #d8d8d8;
       padding-top: 1em;
     }
 
